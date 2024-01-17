@@ -1,0 +1,41 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\User\Documents\Conception conjointe\Lab3\FAUGERE_lab3\lab3_qsys.qsys" --synthesis=VERILOG --output-directory="C:\Users\User\Documents\Conception conjointe\Lab3\FAUGERE_lab3\lab3_qsys\synthesis" --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading FAUGERE_lab3/lab3_qsys.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 18.0]
+Progress: Parameterizing module clk_0
+Progress: Adding digit0 [altera_avalon_pio 18.0]
+Progress: Parameterizing module digit0
+Progress: Adding digit1 [altera_avalon_pio 18.0]
+Progress: Parameterizing module digit1
+Progress: Adding digit2 [altera_avalon_pio 18.0]
+Progress: Parameterizing module digit2
+Progress: Adding digit3 [altera_avalon_pio 18.0]
+Progress: Parameterizing module digit3
+Progress: Adding digit4 [altera_avalon_pio 18.0]
+Progress: Parameterizing module digit4
+Progress: Adding digit5 [altera_avalon_pio 18.0]
+Progress: Parameterizing module digit5
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 18.0]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding nios2_gen2_0 [altera_nios2_gen2 18.0]
+Progress: Parameterizing module nios2_gen2_0
+Progress: Adding onchip_memory [altera_avalon_onchip_memory2 18.0]
+Progress: Parameterizing module onchip_memory
+Progress: Adding opencores_i2c [opencores_i2c 9.1]
+Progress: Parameterizing module opencores_i2c
+Progress: Adding pioPushButton [altera_avalon_pio 18.0]
+Progress: Parameterizing module pioPushButton
+Progress: Adding timer [altera_avalon_timer 18.0]
+Progress: Parameterizing module timer
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: lab3_qsys.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Error: lab3_qsys.: There are multiple signals with role "export". Components using hw.tcl package 14.0 and greater must specify unique signal roles.     while executing "add_interface_port export_0 sda_pad_io export Bidir 1"
+Info: lab3_qsys.pioPushButton: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Error: lab3_qsys.nios2_gen2_0.data_master/opencores_i2c.avalon_slave_0: Missing connection end (try "Remove Dangling Connections")
+Error: lab3_qsys.nios2_gen2_0.irq/opencores_i2c.interrupt_sender: Missing connection end (try "Remove Dangling Connections")
+Info: lab3_qsys: Generating lab3_qsys "lab3_qsys" for QUARTUS_SYNTH
+Error: null
