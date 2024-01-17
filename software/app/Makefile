@@ -4,7 +4,7 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS :=
+ALT_INCLUDE_DIRS := inc/
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
@@ -142,7 +142,7 @@ ACDS_VERSION := 18.0
 ELF := prog.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += inc/main.c
+C_SRCS += src/main.c
 CXX_SRCS :=
 ASM_SRCS :=
 

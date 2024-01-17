@@ -10,3 +10,4 @@
 #define DATAY1 0x35
 #define DATAZ0 0x36
 #define DATAZ1 0x37
+#define DATA_FORMAT_REG 0x31
