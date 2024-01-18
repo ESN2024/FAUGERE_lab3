@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
 
--- DATE "01/17/2024 10:57:50"
+-- DATE "01/18/2024 21:05:34"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -3142,19 +3142,19 @@ SIGNAL \auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jt
 SIGNAL \auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|virtual_ir_tdo_sel_reg\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg\ : std_logic_vector(9 DOWNTO 0);
 SIGNAL \auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|identity_contrib_shift_reg\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \segdecod5|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \segdecod4|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \segdecod3|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \segdecod2|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \segdecod1|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \u0|nios2_gen2_0|cpu|ALT_INV_W_alu_result\ : std_logic_vector(3 DOWNTO 3);
+SIGNAL \segdecod0|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \u0|rst_controller|ALT_INV_r_early_rst~q\ : std_logic;
 SIGNAL \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|the_lab3_qsys_nios2_gen2_0_cpu_nios2_ocimem|ALT_INV_ociram_wr_en~1_combout\ : std_logic;
 SIGNAL \u0|nios2_gen2_0|cpu|ALT_INV_av_ld_rshift8~1_combout\ : std_logic;
 SIGNAL \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|ALT_INV_address\ : std_logic_vector(8 DOWNTO 8);
 SIGNAL \u0|nios2_gen2_0|cpu|ALT_INV_D_iw\ : std_logic_vector(2 DOWNTO 2);
 SIGNAL \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|the_lab3_qsys_nios2_gen2_0_cpu_debug_slave_wrapper|lab3_qsys_nios2_gen2_0_cpu_debug_slave_phy|ALT_INV_virtual_state_sdr~0_combout\ : std_logic;
-SIGNAL \segdecod5|ALT_INV_Mux0~0_combout\ : std_logic;
-SIGNAL \segdecod4|ALT_INV_Mux0~0_combout\ : std_logic;
-SIGNAL \segdecod3|ALT_INV_Mux0~0_combout\ : std_logic;
-SIGNAL \segdecod2|ALT_INV_Mux0~0_combout\ : std_logic;
-SIGNAL \segdecod1|ALT_INV_Mux0~0_combout\ : std_logic;
-SIGNAL \segdecod0|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \ALT_INV_altera_internal_jtag~TCKUTAPclkctrl_outclk\ : std_logic;
 SIGNAL \u0|rst_controller|ALT_INV_r_sync_rst~clkctrl_outclk\ : std_logic;
 SIGNAL \auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|ALT_INV_state\ : std_logic_vector(4 DOWNTO 3);
@@ -3863,19 +3863,19 @@ gnd & gnd & gnd & gnd & gnd & gnd & \u0|nios2_gen2_0|cpu|d_writedata\(7) & \u0|n
 \altera_internal_jtag~TCKUTAPclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \altera_internal_jtag~TCKUTAP\);
 
 \clk~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk~input_o\);
+\segdecod5|ALT_INV_Mux0~0_combout\ <= NOT \segdecod5|Mux0~0_combout\;
+\segdecod4|ALT_INV_Mux0~0_combout\ <= NOT \segdecod4|Mux0~0_combout\;
+\segdecod3|ALT_INV_Mux0~0_combout\ <= NOT \segdecod3|Mux0~0_combout\;
+\segdecod2|ALT_INV_Mux0~0_combout\ <= NOT \segdecod2|Mux0~0_combout\;
+\segdecod1|ALT_INV_Mux0~0_combout\ <= NOT \segdecod1|Mux0~0_combout\;
 \u0|nios2_gen2_0|cpu|ALT_INV_W_alu_result\(3) <= NOT \u0|nios2_gen2_0|cpu|W_alu_result\(3);
+\segdecod0|ALT_INV_Mux0~0_combout\ <= NOT \segdecod0|Mux0~0_combout\;
 \u0|rst_controller|ALT_INV_r_early_rst~q\ <= NOT \u0|rst_controller|r_early_rst~q\;
 \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|the_lab3_qsys_nios2_gen2_0_cpu_nios2_ocimem|ALT_INV_ociram_wr_en~1_combout\ <= NOT \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|the_lab3_qsys_nios2_gen2_0_cpu_nios2_ocimem|ociram_wr_en~1_combout\;
 \u0|nios2_gen2_0|cpu|ALT_INV_av_ld_rshift8~1_combout\ <= NOT \u0|nios2_gen2_0|cpu|av_ld_rshift8~1_combout\;
 \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|ALT_INV_address\(8) <= NOT \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|address\(8);
 \u0|nios2_gen2_0|cpu|ALT_INV_D_iw\(2) <= NOT \u0|nios2_gen2_0|cpu|D_iw\(2);
 \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|the_lab3_qsys_nios2_gen2_0_cpu_debug_slave_wrapper|lab3_qsys_nios2_gen2_0_cpu_debug_slave_phy|ALT_INV_virtual_state_sdr~0_combout\ <= NOT \u0|nios2_gen2_0|cpu|the_lab3_qsys_nios2_gen2_0_cpu_nios2_oci|the_lab3_qsys_nios2_gen2_0_cpu_debug_slave_wrapper|lab3_qsys_nios2_gen2_0_cpu_debug_slave_phy|virtual_state_sdr~0_combout\;
-\segdecod5|ALT_INV_Mux0~0_combout\ <= NOT \segdecod5|Mux0~0_combout\;
-\segdecod4|ALT_INV_Mux0~0_combout\ <= NOT \segdecod4|Mux0~0_combout\;
-\segdecod3|ALT_INV_Mux0~0_combout\ <= NOT \segdecod3|Mux0~0_combout\;
-\segdecod2|ALT_INV_Mux0~0_combout\ <= NOT \segdecod2|Mux0~0_combout\;
-\segdecod1|ALT_INV_Mux0~0_combout\ <= NOT \segdecod1|Mux0~0_combout\;
-\segdecod0|ALT_INV_Mux0~0_combout\ <= NOT \segdecod0|Mux0~0_combout\;
 \ALT_INV_altera_internal_jtag~TCKUTAPclkctrl_outclk\ <= NOT \altera_internal_jtag~TCKUTAPclkctrl_outclk\;
 \u0|rst_controller|ALT_INV_r_sync_rst~clkctrl_outclk\ <= NOT \u0|rst_controller|r_sync_rst~clkctrl_outclk\;
 \auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|ALT_INV_state\(3) <= NOT \auto_hub|instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|instrumentation_fabric|alt_sld_fab|sldfabric|jtag_hub_gen:real_sld_jtag_hub|shadow_jsm|state\(3);
@@ -64501,11 +64501,11 @@ PORT MAP (
 -- Location: LCCOMB_X59_Y38_N0
 \segdecod0|Mux6~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod0|Mux6~0_combout\ = (\u0|digit0|data_out\(3) & (\u0|digit0|data_out\(0) & (\u0|digit0|data_out\(1) $ (\u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(3) & (!\u0|digit0|data_out\(1) & (\u0|digit0|data_out\(0) $ (\u0|digit0|data_out\(2)))))
+-- \segdecod0|Mux6~0_combout\ = (\u0|digit0|data_out\(3) & ((\u0|digit0|data_out\(1)) # ((\u0|digit0|data_out\(0) & \u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(3) & (!\u0|digit0|data_out\(1) & (\u0|digit0|data_out\(0) $ (\u0|digit0|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0010000110010000",
+	lut_mask => "1010100110011000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64518,12 +64518,11 @@ PORT MAP (
 -- Location: LCCOMB_X59_Y38_N26
 \segdecod0|Mux5~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod0|Mux5~0_combout\ = (\u0|digit0|data_out\(3) & ((\u0|digit0|data_out\(0) & (\u0|digit0|data_out\(1))) # (!\u0|digit0|data_out\(0) & ((\u0|digit0|data_out\(2)))))) # (!\u0|digit0|data_out\(3) & (\u0|digit0|data_out\(2) & (\u0|digit0|data_out\(1) $ 
--- (\u0|digit0|data_out\(0)))))
+-- \segdecod0|Mux5~0_combout\ = (\u0|digit0|data_out\(1) & ((\u0|digit0|data_out\(3)) # ((!\u0|digit0|data_out\(0) & \u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(1) & (((\u0|digit0|data_out\(0) & \u0|digit0|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001111010000000",
+	lut_mask => "1011110010001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64536,11 +64535,11 @@ PORT MAP (
 -- Location: LCCOMB_X59_Y38_N4
 \segdecod0|Mux4~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod0|Mux4~0_combout\ = (\u0|digit0|data_out\(3) & (\u0|digit0|data_out\(2) & ((\u0|digit0|data_out\(1)) # (!\u0|digit0|data_out\(0))))) # (!\u0|digit0|data_out\(3) & (\u0|digit0|data_out\(1) & (!\u0|digit0|data_out\(0) & !\u0|digit0|data_out\(2))))
+-- \segdecod0|Mux4~0_combout\ = (\u0|digit0|data_out\(3) & ((\u0|digit0|data_out\(1)) # ((\u0|digit0|data_out\(0) & \u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(3) & (\u0|digit0|data_out\(1) & (!\u0|digit0|data_out\(0) & !\u0|digit0|data_out\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000101000000100",
+	lut_mask => "1010100010001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64553,12 +64552,12 @@ PORT MAP (
 -- Location: LCCOMB_X59_Y38_N14
 \segdecod0|Mux3~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod0|Mux3~0_combout\ = (\u0|digit0|data_out\(1) & ((\u0|digit0|data_out\(0) & ((\u0|digit0|data_out\(2)))) # (!\u0|digit0|data_out\(0) & (\u0|digit0|data_out\(3) & !\u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(1) & (!\u0|digit0|data_out\(3) 
--- & (\u0|digit0|data_out\(0) $ (\u0|digit0|data_out\(2)))))
+-- \segdecod0|Mux3~0_combout\ = (\u0|digit0|data_out\(3) & ((\u0|digit0|data_out\(1)) # ((\u0|digit0|data_out\(0) & \u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(3) & ((\u0|digit0|data_out\(1) & (\u0|digit0|data_out\(0) & \u0|digit0|data_out\(2))) # 
+-- (!\u0|digit0|data_out\(1) & (\u0|digit0|data_out\(0) $ (\u0|digit0|data_out\(2))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100000100011000",
+	lut_mask => "1110100110011000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64571,12 +64570,11 @@ PORT MAP (
 -- Location: LCCOMB_X59_Y38_N16
 \segdecod0|Mux2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod0|Mux2~0_combout\ = (\u0|digit0|data_out\(1) & (!\u0|digit0|data_out\(3) & (\u0|digit0|data_out\(0)))) # (!\u0|digit0|data_out\(1) & ((\u0|digit0|data_out\(2) & (!\u0|digit0|data_out\(3))) # (!\u0|digit0|data_out\(2) & 
--- ((\u0|digit0|data_out\(0))))))
+-- \segdecod0|Mux2~0_combout\ = (\u0|digit0|data_out\(0)) # ((\u0|digit0|data_out\(3) & (\u0|digit0|data_out\(1))) # (!\u0|digit0|data_out\(3) & (!\u0|digit0|data_out\(1) & \u0|digit0|data_out\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101000101110000",
+	lut_mask => "1111100111111000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64589,12 +64587,12 @@ PORT MAP (
 -- Location: LCCOMB_X59_Y38_N2
 \segdecod0|Mux1~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod0|Mux1~0_combout\ = (\u0|digit0|data_out\(1) & (!\u0|digit0|data_out\(3) & ((\u0|digit0|data_out\(0)) # (!\u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(1) & (\u0|digit0|data_out\(0) & (\u0|digit0|data_out\(3) $ 
+-- \segdecod0|Mux1~0_combout\ = (\u0|digit0|data_out\(1) & ((\u0|digit0|data_out\(3)) # ((\u0|digit0|data_out\(0)) # (!\u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(1) & (\u0|digit0|data_out\(0) & (\u0|digit0|data_out\(3) $ 
 -- (!\u0|digit0|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110000001010100",
+	lut_mask => "1110100011011100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64607,11 +64605,12 @@ PORT MAP (
 -- Location: LCCOMB_X59_Y38_N28
 \segdecod0|Mux0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod0|Mux0~0_combout\ = (\u0|digit0|data_out\(0) & ((\u0|digit0|data_out\(3)) # (\u0|digit0|data_out\(1) $ (\u0|digit0|data_out\(2))))) # (!\u0|digit0|data_out\(0) & ((\u0|digit0|data_out\(1)) # (\u0|digit0|data_out\(3) $ (\u0|digit0|data_out\(2)))))
+-- \segdecod0|Mux0~0_combout\ = (\u0|digit0|data_out\(3) & ((\u0|digit0|data_out\(1) & (!\u0|digit0|data_out\(0) & !\u0|digit0|data_out\(2))) # (!\u0|digit0|data_out\(1) & ((!\u0|digit0|data_out\(2)) # (!\u0|digit0|data_out\(0)))))) # 
+-- (!\u0|digit0|data_out\(3) & ((\u0|digit0|data_out\(1) & ((!\u0|digit0|data_out\(2)) # (!\u0|digit0|data_out\(0)))) # (!\u0|digit0|data_out\(1) & ((\u0|digit0|data_out\(2))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011110111101110",
+	lut_mask => "0001011101101110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64624,11 +64623,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y38_N24
 \segdecod1|Mux6~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod1|Mux6~0_combout\ = (\u0|digit1|data_out\(2) & (!\u0|digit1|data_out\(1) & (\u0|digit1|data_out\(0) $ (!\u0|digit1|data_out\(3))))) # (!\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0) & (\u0|digit1|data_out\(1) $ (!\u0|digit1|data_out\(3)))))
+-- \segdecod1|Mux6~0_combout\ = (\u0|digit1|data_out\(1) & (((\u0|digit1|data_out\(3))))) # (!\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0) $ (!\u0|digit1|data_out\(3)))) # (!\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0) 
+-- & !\u0|digit1|data_out\(3)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110000000010100",
+	lut_mask => "1110101000010100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64641,12 +64641,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y38_N2
 \segdecod1|Mux5~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod1|Mux5~0_combout\ = (\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(0) & ((\u0|digit1|data_out\(3)))) # (!\u0|digit1|data_out\(0) & (\u0|digit1|data_out\(2))))) # (!\u0|digit1|data_out\(1) & (\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0) $ 
--- (\u0|digit1|data_out\(3)))))
+-- \segdecod1|Mux5~0_combout\ = (\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(3)) # ((\u0|digit1|data_out\(2) & !\u0|digit1|data_out\(0))))) # (!\u0|digit1|data_out\(1) & (\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010110001001000",
+	lut_mask => "1110101001001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64659,11 +64658,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y38_N4
 \segdecod1|Mux4~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod1|Mux4~0_combout\ = (\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(3) & ((\u0|digit1|data_out\(1)) # (!\u0|digit1|data_out\(0))))) # (!\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(1) & (!\u0|digit1|data_out\(0) & !\u0|digit1|data_out\(3))))
+-- \segdecod1|Mux4~0_combout\ = (\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(3)) # ((!\u0|digit1|data_out\(2) & !\u0|digit1|data_out\(0))))) # (!\u0|digit1|data_out\(1) & (\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0) & \u0|digit1|data_out\(3))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000110000000010",
+	lut_mask => "1110101000000010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64676,12 +64675,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y38_N22
 \segdecod1|Mux3~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod1|Mux3~0_combout\ = (\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0))) # (!\u0|digit1|data_out\(2) & (!\u0|digit1|data_out\(0) & \u0|digit1|data_out\(3))))) # (!\u0|digit1|data_out\(1) & (!\u0|digit1|data_out\(3) & 
--- (\u0|digit1|data_out\(2) $ (\u0|digit1|data_out\(0)))))
+-- \segdecod1|Mux3~0_combout\ = (\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(3)) # ((\u0|digit1|data_out\(2) & \u0|digit1|data_out\(0))))) # (!\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0) $ (!\u0|digit1|data_out\(3)))) 
+-- # (!\u0|digit1|data_out\(2) & (\u0|digit1|data_out\(0) & !\u0|digit1|data_out\(3)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000001010010100",
+	lut_mask => "1110101010010100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64694,12 +64693,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y38_N16
 \segdecod1|Mux2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod1|Mux2~0_combout\ = (\u0|digit1|data_out\(1) & (((\u0|digit1|data_out\(0) & !\u0|digit1|data_out\(3))))) # (!\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(2) & ((!\u0|digit1|data_out\(3)))) # (!\u0|digit1|data_out\(2) & 
--- (\u0|digit1|data_out\(0)))))
+-- \segdecod1|Mux2~0_combout\ = (\u0|digit1|data_out\(0)) # ((\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(3)))) # (!\u0|digit1|data_out\(1) & (\u0|digit1|data_out\(2) & !\u0|digit1|data_out\(3))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0001000011110100",
+	lut_mask => "1111101011110100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64712,12 +64710,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y38_N26
 \segdecod1|Mux1~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod1|Mux1~0_combout\ = (\u0|digit1|data_out\(1) & (!\u0|digit1|data_out\(3) & ((\u0|digit1|data_out\(0)) # (!\u0|digit1|data_out\(2))))) # (!\u0|digit1|data_out\(1) & (\u0|digit1|data_out\(0) & (\u0|digit1|data_out\(2) $ 
+-- \segdecod1|Mux1~0_combout\ = (\u0|digit1|data_out\(1) & (((\u0|digit1|data_out\(0)) # (\u0|digit1|data_out\(3))) # (!\u0|digit1|data_out\(2)))) # (!\u0|digit1|data_out\(1) & (\u0|digit1|data_out\(0) & (\u0|digit1|data_out\(2) $ 
 -- (!\u0|digit1|data_out\(3)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100000010110010",
+	lut_mask => "1110101010110010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64730,11 +64728,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y38_N20
 \segdecod1|Mux0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod1|Mux0~0_combout\ = (\u0|digit1|data_out\(0) & ((\u0|digit1|data_out\(3)) # (\u0|digit1|data_out\(1) $ (\u0|digit1|data_out\(2))))) # (!\u0|digit1|data_out\(0) & ((\u0|digit1|data_out\(1)) # (\u0|digit1|data_out\(2) $ (\u0|digit1|data_out\(3)))))
+-- \segdecod1|Mux0~0_combout\ = (\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(2) & (!\u0|digit1|data_out\(0) & !\u0|digit1|data_out\(3))) # (!\u0|digit1|data_out\(2) & ((!\u0|digit1|data_out\(3)) # (!\u0|digit1|data_out\(0)))))) # 
+-- (!\u0|digit1|data_out\(1) & ((\u0|digit1|data_out\(2) & ((!\u0|digit1|data_out\(3)) # (!\u0|digit1|data_out\(0)))) # (!\u0|digit1|data_out\(2) & ((\u0|digit1|data_out\(3))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101101101110",
+	lut_mask => "0001011101101110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64747,11 +64746,12 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y37_N24
 \segdecod2|Mux6~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod2|Mux6~0_combout\ = (\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(0) & (\u0|digit2|data_out\(1) $ (\u0|digit2|data_out\(2))))) # (!\u0|digit2|data_out\(3) & (!\u0|digit2|data_out\(1) & (\u0|digit2|data_out\(0) $ (\u0|digit2|data_out\(2)))))
+-- \segdecod2|Mux6~0_combout\ = (\u0|digit2|data_out\(1) & (\u0|digit2|data_out\(3))) # (!\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(0) & \u0|digit2|data_out\(2))) # (!\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(0) $ 
+-- (\u0|digit2|data_out\(2))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100000110010000",
+	lut_mask => "1100100110011000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64764,12 +64764,11 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y37_N2
 \segdecod2|Mux5~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod2|Mux5~0_combout\ = (\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(0) & (\u0|digit2|data_out\(3))) # (!\u0|digit2|data_out\(0) & ((\u0|digit2|data_out\(2)))))) # (!\u0|digit2|data_out\(1) & (\u0|digit2|data_out\(2) & (\u0|digit2|data_out\(3) $ 
--- (\u0|digit2|data_out\(0)))))
+-- \segdecod2|Mux5~0_combout\ = (\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(3)) # ((!\u0|digit2|data_out\(0) & \u0|digit2|data_out\(2))))) # (!\u0|digit2|data_out\(1) & (((\u0|digit2|data_out\(0) & \u0|digit2|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001111010000000",
+	lut_mask => "1101101010001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64782,11 +64781,11 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y37_N12
 \segdecod2|Mux4~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod2|Mux4~0_combout\ = (\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(2) & ((\u0|digit2|data_out\(1)) # (!\u0|digit2|data_out\(0))))) # (!\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(1) & (!\u0|digit2|data_out\(0) & !\u0|digit2|data_out\(2))))
+-- \segdecod2|Mux4~0_combout\ = (\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(3)) # ((!\u0|digit2|data_out\(0) & !\u0|digit2|data_out\(2))))) # (!\u0|digit2|data_out\(1) & (\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(0) & \u0|digit2|data_out\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000110000000010",
+	lut_mask => "1100100010001010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64799,12 +64798,12 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y37_N22
 \segdecod2|Mux3~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod2|Mux3~0_combout\ = (\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(0) & ((\u0|digit2|data_out\(2)))) # (!\u0|digit2|data_out\(0) & (\u0|digit2|data_out\(3) & !\u0|digit2|data_out\(2))))) # (!\u0|digit2|data_out\(1) & (!\u0|digit2|data_out\(3) 
--- & (\u0|digit2|data_out\(0) $ (\u0|digit2|data_out\(2)))))
+-- \segdecod2|Mux3~0_combout\ = (\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(3)) # ((\u0|digit2|data_out\(0) & \u0|digit2|data_out\(2))))) # (!\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(0) & \u0|digit2|data_out\(2))) # 
+-- (!\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(0) $ (\u0|digit2|data_out\(2))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010000100011000",
+	lut_mask => "1110100110011000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64817,12 +64816,11 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y37_N0
 \segdecod2|Mux2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod2|Mux2~0_combout\ = (\u0|digit2|data_out\(1) & (!\u0|digit2|data_out\(3) & (\u0|digit2|data_out\(0)))) # (!\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(2) & (!\u0|digit2|data_out\(3))) # (!\u0|digit2|data_out\(2) & 
--- ((\u0|digit2|data_out\(0))))))
+-- \segdecod2|Mux2~0_combout\ = (\u0|digit2|data_out\(0)) # ((\u0|digit2|data_out\(1) & (\u0|digit2|data_out\(3))) # (!\u0|digit2|data_out\(1) & (!\u0|digit2|data_out\(3) & \u0|digit2|data_out\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011000101110000",
+	lut_mask => "1111100111111000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64835,12 +64833,12 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y37_N26
 \segdecod2|Mux1~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod2|Mux1~0_combout\ = (\u0|digit2|data_out\(1) & (!\u0|digit2|data_out\(3) & ((\u0|digit2|data_out\(0)) # (!\u0|digit2|data_out\(2))))) # (!\u0|digit2|data_out\(1) & (\u0|digit2|data_out\(0) & (\u0|digit2|data_out\(3) $ 
+-- \segdecod2|Mux1~0_combout\ = (\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(3)) # ((\u0|digit2|data_out\(0)) # (!\u0|digit2|data_out\(2))))) # (!\u0|digit2|data_out\(1) & (\u0|digit2|data_out\(0) & (\u0|digit2|data_out\(3) $ 
 -- (!\u0|digit2|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0110000000110010",
+	lut_mask => "1110100010111010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64853,11 +64851,12 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y37_N4
 \segdecod2|Mux0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod2|Mux0~0_combout\ = (\u0|digit2|data_out\(0) & ((\u0|digit2|data_out\(3)) # (\u0|digit2|data_out\(1) $ (\u0|digit2|data_out\(2))))) # (!\u0|digit2|data_out\(0) & ((\u0|digit2|data_out\(1)) # (\u0|digit2|data_out\(3) $ (\u0|digit2|data_out\(2)))))
+-- \segdecod2|Mux0~0_combout\ = (\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(3) & (!\u0|digit2|data_out\(0) & !\u0|digit2|data_out\(2))) # (!\u0|digit2|data_out\(3) & ((!\u0|digit2|data_out\(2)) # (!\u0|digit2|data_out\(0)))))) # 
+-- (!\u0|digit2|data_out\(1) & ((\u0|digit2|data_out\(3) & ((!\u0|digit2|data_out\(2)) # (!\u0|digit2|data_out\(0)))) # (!\u0|digit2|data_out\(3) & ((\u0|digit2|data_out\(2))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101101111101110",
+	lut_mask => "0001011101101110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64870,11 +64869,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y35_N16
 \segdecod3|Mux6~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod3|Mux6~0_combout\ = (\u0|digit3|data_out\(3) & (\u0|digit3|data_out\(0) & (\u0|digit3|data_out\(1) $ (\u0|digit3|data_out\(2))))) # (!\u0|digit3|data_out\(3) & (!\u0|digit3|data_out\(1) & (\u0|digit3|data_out\(0) $ (\u0|digit3|data_out\(2)))))
+-- \segdecod3|Mux6~0_combout\ = (\u0|digit3|data_out\(1) & (((\u0|digit3|data_out\(3))))) # (!\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(0) & (\u0|digit3|data_out\(3) $ (!\u0|digit3|data_out\(2)))) # (!\u0|digit3|data_out\(0) & 
+-- (!\u0|digit3|data_out\(3) & \u0|digit3|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100000110000100",
+	lut_mask => "1110000110100100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64887,12 +64887,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y35_N26
 \segdecod3|Mux5~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod3|Mux5~0_combout\ = (\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(0) & (\u0|digit3|data_out\(3))) # (!\u0|digit3|data_out\(0) & ((\u0|digit3|data_out\(2)))))) # (!\u0|digit3|data_out\(1) & (\u0|digit3|data_out\(2) & (\u0|digit3|data_out\(0) $ 
--- (\u0|digit3|data_out\(3)))))
+-- \segdecod3|Mux5~0_combout\ = (\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(3)) # ((!\u0|digit3|data_out\(0) & \u0|digit3|data_out\(2))))) # (!\u0|digit3|data_out\(1) & (\u0|digit3|data_out\(0) & ((\u0|digit3|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011011010000000",
+	lut_mask => "1110011010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64905,11 +64904,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y35_N4
 \segdecod3|Mux4~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod3|Mux4~0_combout\ = (\u0|digit3|data_out\(3) & (\u0|digit3|data_out\(2) & ((\u0|digit3|data_out\(1)) # (!\u0|digit3|data_out\(0))))) # (!\u0|digit3|data_out\(3) & (\u0|digit3|data_out\(1) & (!\u0|digit3|data_out\(0) & !\u0|digit3|data_out\(2))))
+-- \segdecod3|Mux4~0_combout\ = (\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(3)) # ((!\u0|digit3|data_out\(0) & !\u0|digit3|data_out\(2))))) # (!\u0|digit3|data_out\(1) & (\u0|digit3|data_out\(0) & (\u0|digit3|data_out\(3) & \u0|digit3|data_out\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011000000000010",
+	lut_mask => "1110000010100010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64922,12 +64921,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y35_N6
 \segdecod3|Mux3~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod3|Mux3~0_combout\ = (\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(0) & ((\u0|digit3|data_out\(2)))) # (!\u0|digit3|data_out\(0) & (\u0|digit3|data_out\(3) & !\u0|digit3|data_out\(2))))) # (!\u0|digit3|data_out\(1) & (!\u0|digit3|data_out\(3) 
--- & (\u0|digit3|data_out\(0) $ (\u0|digit3|data_out\(2)))))
+-- \segdecod3|Mux3~0_combout\ = (\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(3)) # ((\u0|digit3|data_out\(0) & \u0|digit3|data_out\(2))))) # (!\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(0) & (\u0|digit3|data_out\(3) $ (!\u0|digit3|data_out\(2)))) 
+-- # (!\u0|digit3|data_out\(0) & (!\u0|digit3|data_out\(3) & \u0|digit3|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000100100100100",
+	lut_mask => "1110100110100100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64940,12 +64939,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y35_N8
 \segdecod3|Mux2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod3|Mux2~0_combout\ = (\u0|digit3|data_out\(1) & (\u0|digit3|data_out\(0) & (!\u0|digit3|data_out\(3)))) # (!\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(2) & ((!\u0|digit3|data_out\(3)))) # (!\u0|digit3|data_out\(2) & 
--- (\u0|digit3|data_out\(0)))))
+-- \segdecod3|Mux2~0_combout\ = (\u0|digit3|data_out\(0)) # ((\u0|digit3|data_out\(1) & (\u0|digit3|data_out\(3))) # (!\u0|digit3|data_out\(1) & (!\u0|digit3|data_out\(3) & \u0|digit3|data_out\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000110101001100",
+	lut_mask => "1110110111101100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64958,12 +64956,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y35_N2
 \segdecod3|Mux1~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod3|Mux1~0_combout\ = (\u0|digit3|data_out\(1) & (!\u0|digit3|data_out\(3) & ((\u0|digit3|data_out\(0)) # (!\u0|digit3|data_out\(2))))) # (!\u0|digit3|data_out\(1) & (\u0|digit3|data_out\(0) & (\u0|digit3|data_out\(3) $ 
+-- \segdecod3|Mux1~0_combout\ = (\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(0)) # ((\u0|digit3|data_out\(3)) # (!\u0|digit3|data_out\(2))))) # (!\u0|digit3|data_out\(1) & (\u0|digit3|data_out\(0) & (\u0|digit3|data_out\(3) $ 
 -- (!\u0|digit3|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100100000001110",
+	lut_mask => "1110100010101110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64976,11 +64974,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y35_N12
 \segdecod3|Mux0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod3|Mux0~0_combout\ = (\u0|digit3|data_out\(0) & ((\u0|digit3|data_out\(3)) # (\u0|digit3|data_out\(1) $ (\u0|digit3|data_out\(2))))) # (!\u0|digit3|data_out\(0) & ((\u0|digit3|data_out\(1)) # (\u0|digit3|data_out\(3) $ (\u0|digit3|data_out\(2)))))
+-- \segdecod3|Mux0~0_combout\ = (\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(0) & (!\u0|digit3|data_out\(3) & !\u0|digit3|data_out\(2))) # (!\u0|digit3|data_out\(0) & ((!\u0|digit3|data_out\(2)) # (!\u0|digit3|data_out\(3)))))) # 
+-- (!\u0|digit3|data_out\(1) & ((\u0|digit3|data_out\(3) & ((!\u0|digit3|data_out\(2)) # (!\u0|digit3|data_out\(0)))) # (!\u0|digit3|data_out\(3) & ((\u0|digit3|data_out\(2))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110011111111010",
+	lut_mask => "0001011101111010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -64993,11 +64992,11 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y36_N24
 \segdecod4|Mux6~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod4|Mux6~0_combout\ = (\u0|digit4|data_out\(2) & (!\u0|digit4|data_out\(1) & (\u0|digit4|data_out\(0) $ (!\u0|digit4|data_out\(3))))) # (!\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(0) & (\u0|digit4|data_out\(3) $ (!\u0|digit4|data_out\(1)))))
+-- \segdecod4|Mux6~0_combout\ = (\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(1)) # ((\u0|digit4|data_out\(2) & \u0|digit4|data_out\(0))))) # (!\u0|digit4|data_out\(3) & (!\u0|digit4|data_out\(1) & (\u0|digit4|data_out\(2) $ (\u0|digit4|data_out\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0100000010000110",
+	lut_mask => "1111000010000110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65010,12 +65009,11 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y36_N18
 \segdecod4|Mux5~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod4|Mux5~0_combout\ = (\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(0) & ((\u0|digit4|data_out\(1)))) # (!\u0|digit4|data_out\(0) & (\u0|digit4|data_out\(2))))) # (!\u0|digit4|data_out\(3) & (\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(0) $ 
--- (\u0|digit4|data_out\(1)))))
+-- \segdecod4|Mux5~0_combout\ = (\u0|digit4|data_out\(1) & ((\u0|digit4|data_out\(3)) # ((\u0|digit4|data_out\(2) & !\u0|digit4|data_out\(0))))) # (!\u0|digit4|data_out\(1) & (\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110001000101000",
+	lut_mask => "1111001010001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65028,11 +65026,12 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y36_N4
 \segdecod4|Mux4~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod4|Mux4~0_combout\ = (\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(1)) # (!\u0|digit4|data_out\(0))))) # (!\u0|digit4|data_out\(2) & (!\u0|digit4|data_out\(0) & (!\u0|digit4|data_out\(3) & \u0|digit4|data_out\(1))))
+-- \segdecod4|Mux4~0_combout\ = (\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(0)) # (\u0|digit4|data_out\(1))))) # (!\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(1) & ((\u0|digit4|data_out\(3)) # 
+-- (!\u0|digit4|data_out\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010000100100000",
+	lut_mask => "1111000110000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65045,12 +65044,12 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y36_N22
 \segdecod4|Mux3~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod4|Mux3~0_combout\ = (\u0|digit4|data_out\(1) & ((\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(0))) # (!\u0|digit4|data_out\(2) & (!\u0|digit4|data_out\(0) & \u0|digit4|data_out\(3))))) # (!\u0|digit4|data_out\(1) & (!\u0|digit4|data_out\(3) & 
--- (\u0|digit4|data_out\(2) $ (\u0|digit4|data_out\(0)))))
+-- \segdecod4|Mux3~0_combout\ = (\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(1)) # ((\u0|digit4|data_out\(2) & \u0|digit4|data_out\(0))))) # (!\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(0) $ (!\u0|digit4|data_out\(1)))) 
+-- # (!\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(0) & !\u0|digit4|data_out\(1)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1001100000000110",
+	lut_mask => "1111100010000110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65063,12 +65062,11 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y36_N8
 \segdecod4|Mux2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod4|Mux2~0_combout\ = (\u0|digit4|data_out\(1) & (((\u0|digit4|data_out\(0) & !\u0|digit4|data_out\(3))))) # (!\u0|digit4|data_out\(1) & ((\u0|digit4|data_out\(2) & ((!\u0|digit4|data_out\(3)))) # (!\u0|digit4|data_out\(2) & 
--- (\u0|digit4|data_out\(0)))))
+-- \segdecod4|Mux2~0_combout\ = (\u0|digit4|data_out\(0)) # ((\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(1)))) # (!\u0|digit4|data_out\(3) & (\u0|digit4|data_out\(2) & !\u0|digit4|data_out\(1))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000110001001110",
+	lut_mask => "1111110011001110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65081,11 +65079,12 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y36_N26
 \segdecod4|Mux1~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod4|Mux1~0_combout\ = (\u0|digit4|data_out\(2) & (\u0|digit4|data_out\(0) & (\u0|digit4|data_out\(3) $ (\u0|digit4|data_out\(1))))) # (!\u0|digit4|data_out\(2) & (!\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(0)) # (\u0|digit4|data_out\(1)))))
+-- \segdecod4|Mux1~0_combout\ = (\u0|digit4|data_out\(0) & ((\u0|digit4|data_out\(1)) # (\u0|digit4|data_out\(2) $ (!\u0|digit4|data_out\(3))))) # (!\u0|digit4|data_out\(0) & (\u0|digit4|data_out\(1) & ((\u0|digit4|data_out\(3)) # 
+-- (!\u0|digit4|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000110110000100",
+	lut_mask => "1111110110000100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65098,11 +65097,12 @@ PORT MAP (
 -- Location: LCCOMB_X62_Y36_N20
 \segdecod4|Mux0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod4|Mux0~0_combout\ = (\u0|digit4|data_out\(0) & ((\u0|digit4|data_out\(3)) # (\u0|digit4|data_out\(2) $ (\u0|digit4|data_out\(1))))) # (!\u0|digit4|data_out\(0) & ((\u0|digit4|data_out\(1)) # (\u0|digit4|data_out\(2) $ (\u0|digit4|data_out\(3)))))
+-- \segdecod4|Mux0~0_combout\ = (\u0|digit4|data_out\(2) & ((\u0|digit4|data_out\(0) & (!\u0|digit4|data_out\(3) & !\u0|digit4|data_out\(1))) # (!\u0|digit4|data_out\(0) & ((!\u0|digit4|data_out\(1)) # (!\u0|digit4|data_out\(3)))))) # 
+-- (!\u0|digit4|data_out\(2) & ((\u0|digit4|data_out\(3) & ((!\u0|digit4|data_out\(1)) # (!\u0|digit4|data_out\(0)))) # (!\u0|digit4|data_out\(3) & ((\u0|digit4|data_out\(1))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111011111011010",
+	lut_mask => "0001011101111010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65115,11 +65115,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y37_N8
 \segdecod5|Mux6~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod5|Mux6~0_combout\ = (\u0|digit5|data_out\(3) & (\u0|digit5|data_out\(0) & (\u0|digit5|data_out\(2) $ (\u0|digit5|data_out\(1))))) # (!\u0|digit5|data_out\(3) & (!\u0|digit5|data_out\(1) & (\u0|digit5|data_out\(2) $ (\u0|digit5|data_out\(0)))))
+-- \segdecod5|Mux6~0_combout\ = (\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(1)) # ((\u0|digit5|data_out\(2) & \u0|digit5|data_out\(0))))) # (!\u0|digit5|data_out\(3) & (!\u0|digit5|data_out\(1) & (\u0|digit5|data_out\(2) $ (\u0|digit5|data_out\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0010100100000100",
+	lut_mask => "1010100110100100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65132,12 +65132,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y37_N2
 \segdecod5|Mux5~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod5|Mux5~0_combout\ = (\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(0) & ((\u0|digit5|data_out\(1)))) # (!\u0|digit5|data_out\(0) & (\u0|digit5|data_out\(2))))) # (!\u0|digit5|data_out\(3) & (\u0|digit5|data_out\(2) & (\u0|digit5|data_out\(1) $ 
--- (\u0|digit5|data_out\(0)))))
+-- \segdecod5|Mux5~0_combout\ = (\u0|digit5|data_out\(1) & ((\u0|digit5|data_out\(3)) # ((\u0|digit5|data_out\(2) & !\u0|digit5|data_out\(0))))) # (!\u0|digit5|data_out\(1) & (((\u0|digit5|data_out\(2) & \u0|digit5|data_out\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010011001000",
+	lut_mask => "1010110011100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65150,11 +65149,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y37_N28
 \segdecod5|Mux4~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod5|Mux4~0_combout\ = (\u0|digit5|data_out\(3) & (\u0|digit5|data_out\(2) & ((\u0|digit5|data_out\(1)) # (!\u0|digit5|data_out\(0))))) # (!\u0|digit5|data_out\(3) & (!\u0|digit5|data_out\(2) & (\u0|digit5|data_out\(1) & !\u0|digit5|data_out\(0))))
+-- \segdecod5|Mux4~0_combout\ = (\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(1)) # ((\u0|digit5|data_out\(2) & \u0|digit5|data_out\(0))))) # (!\u0|digit5|data_out\(3) & (!\u0|digit5|data_out\(2) & (\u0|digit5|data_out\(1) & !\u0|digit5|data_out\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1000000010011000",
+	lut_mask => "1010100010110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65167,12 +65166,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y37_N14
 \segdecod5|Mux3~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod5|Mux3~0_combout\ = (\u0|digit5|data_out\(1) & ((\u0|digit5|data_out\(2) & ((\u0|digit5|data_out\(0)))) # (!\u0|digit5|data_out\(2) & (\u0|digit5|data_out\(3) & !\u0|digit5|data_out\(0))))) # (!\u0|digit5|data_out\(1) & (!\u0|digit5|data_out\(3) 
--- & (\u0|digit5|data_out\(2) $ (\u0|digit5|data_out\(0)))))
+-- \segdecod5|Mux3~0_combout\ = (\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(1)) # ((\u0|digit5|data_out\(2) & \u0|digit5|data_out\(0))))) # (!\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(2) & (\u0|digit5|data_out\(1) $ (!\u0|digit5|data_out\(0)))) 
+-- # (!\u0|digit5|data_out\(2) & (!\u0|digit5|data_out\(1) & \u0|digit5|data_out\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100000100100100",
+	lut_mask => "1110100110100100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65185,12 +65184,11 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y37_N16
 \segdecod5|Mux2~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod5|Mux2~0_combout\ = (\u0|digit5|data_out\(1) & (!\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(0))))) # (!\u0|digit5|data_out\(1) & ((\u0|digit5|data_out\(2) & (!\u0|digit5|data_out\(3))) # (!\u0|digit5|data_out\(2) & 
--- ((\u0|digit5|data_out\(0))))))
+-- \segdecod5|Mux2~0_combout\ = (\u0|digit5|data_out\(0)) # ((\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(1)))) # (!\u0|digit5|data_out\(3) & (\u0|digit5|data_out\(2) & !\u0|digit5|data_out\(1))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101011100000100",
+	lut_mask => "1111111110100100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65203,11 +65201,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y37_N26
 \segdecod5|Mux1~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod5|Mux1~0_combout\ = (\u0|digit5|data_out\(2) & (\u0|digit5|data_out\(0) & (\u0|digit5|data_out\(3) $ (\u0|digit5|data_out\(1))))) # (!\u0|digit5|data_out\(2) & (!\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(1)) # (\u0|digit5|data_out\(0)))))
+-- \segdecod5|Mux1~0_combout\ = (\u0|digit5|data_out\(1) & ((\u0|digit5|data_out\(3)) # ((\u0|digit5|data_out\(0)) # (!\u0|digit5|data_out\(2))))) # (!\u0|digit5|data_out\(1) & (\u0|digit5|data_out\(0) & (\u0|digit5|data_out\(3) $ 
+-- (!\u0|digit5|data_out\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101100100010000",
+	lut_mask => "1111100110110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
@@ -65220,11 +65219,12 @@ PORT MAP (
 -- Location: LCCOMB_X61_Y37_N12
 \segdecod5|Mux0~0\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \segdecod5|Mux0~0_combout\ = (\u0|digit5|data_out\(0) & ((\u0|digit5|data_out\(3)) # (\u0|digit5|data_out\(2) $ (\u0|digit5|data_out\(1))))) # (!\u0|digit5|data_out\(0) & ((\u0|digit5|data_out\(1)) # (\u0|digit5|data_out\(3) $ (\u0|digit5|data_out\(2)))))
+-- \segdecod5|Mux0~0_combout\ = (\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(2) & (!\u0|digit5|data_out\(1) & !\u0|digit5|data_out\(0))) # (!\u0|digit5|data_out\(2) & ((!\u0|digit5|data_out\(0)) # (!\u0|digit5|data_out\(1)))))) # 
+-- (!\u0|digit5|data_out\(3) & ((\u0|digit5|data_out\(2) & ((!\u0|digit5|data_out\(0)) # (!\u0|digit5|data_out\(1)))) # (!\u0|digit5|data_out\(2) & (\u0|digit5|data_out\(1)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011111011110110",
+	lut_mask => "0001011001111110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (

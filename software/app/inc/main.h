@@ -11,3 +11,7 @@
 #define DATAZ0 0x36
 #define DATAZ1 0x37
 #define DATA_FORMAT_REG 0x31
+
+// valeur pour les affichages spéciaux du 7-segment
+#define MINUS_7SEG 10 // signe moins
+#define NONE_7SEG 11 // 7-segment éteint

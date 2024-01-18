@@ -14,11 +14,9 @@
 alt_u8 currentDataAddr = DATAX0;
 
 static void pushButton_IRQHandler(void* context, alt_u32 id)    {
-    // changement données à récupérer (accélération axe x, y, z puis x, ...)
+    // set data type (acc axe x, y, z then x, ...)
     if(currentDataAddr == DATAZ0)   currentDataAddr = DATAX0;
     else currentDataAddr += 0x2;
-
-    alt_printf("test");
 
     // clear interrupt register
     IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIOPUSHBUTTON_BASE, 1);
@@ -33,21 +31,31 @@ static void timer_IRQHandler (void * context, alt_u32 id)	{
     I2C_start(OPENCORES_I2C_0_BASE, DEVICE_I2C_ADDR, 1);
     alt_u32 LSB_value = I2C_read(OPENCORES_I2C_0_BASE, 0);
     alt_u32 MSB_value = I2C_read(OPENCORES_I2C_0_BASE, 1);
+    
+    // arrange data representation
     alt_u32 value = (MSB_value<<8) | (LSB_value);
     alt_u8 sign = (value>>9)&1;
-    
-    alt_32 s32_value = 0xFFFFC000 | value; // valeur signé sur 32 bits et non plus sur 10 bits
-    alt_32 value_mg = s32_value * 2/((1<<9) - 1);
-    alt_u32 value_mg_abs = (unsigned)value_mg;
+    alt_32 s32_value = (sign == 0) ? value : 0xFFFFC000 | value; // signed value on 32 bits (no more on 10 bits)
+    alt_32 value_mg = s32_value * 2000/(alt_32)((1<<9) - 1);
+    alt_u32 value_mg_abs = (sign == 0) ? value_mg : -value_mg;
 
-    alt_u8 digit3decimal = value_mg_abs/1000;
-    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT3_BASE, digit3decimal);
-    alt_u8 digit2decimal = (value_mg_abs - digit3decimal*1000)/100;
-    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT2_BASE, digit2decimal);
-    alt_u8 digit1decimal = (value_mg_abs - digit2decimal*1000)/100;
-    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT1_BASE, value_mg/1000);
-    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT0_BASE, value_mg/1000);
+    // sign display
+    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT4_BASE, (sign == 1) ? MINUS_7SEG : NONE_7SEG);
+    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT5_BASE, NONE_7SEG);
 
+    // 4 digits (display absolute value in mg)
+    alt_u8 digit_decimal = value_mg_abs/1000;
+    value_mg_abs -= digit_decimal*1000;
+    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT3_BASE, digit_decimal);
+    digit_decimal = value_mg_abs/100;
+    value_mg_abs -= digit_decimal*100;
+    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT2_BASE, digit_decimal);
+    digit_decimal = value_mg_abs/10;
+    value_mg_abs -= digit_decimal*10;
+    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT1_BASE, digit_decimal);
+    digit_decimal = value_mg_abs;
+    value_mg_abs -= digit_decimal;
+    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT0_BASE, digit_decimal);
 
 	// clear timeout status register
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, ALTERA_AVALON_TIMER_STATUS_TO_MSK);
@@ -91,11 +99,11 @@ int main()	{
     I2C_start(OPENCORES_I2C_0_BASE, DEVICE_I2C_ADDR, 0);
     I2C_write(OPENCORES_I2C_0_BASE, OFSX_REG, 0);
     // x calibration
-    I2C_write(OPENCORES_I2C_0_BASE, 0x00, 0);
+    I2C_write(OPENCORES_I2C_0_BASE, -2, 0);
     // y calibration
-    I2C_write(OPENCORES_I2C_0_BASE, 0x00, 0);
+    I2C_write(OPENCORES_I2C_0_BASE, +3, 0);
     // z calibration
-    I2C_write(OPENCORES_I2C_0_BASE, 0x00, 1); // stop bit with set to 1
+    I2C_write(OPENCORES_I2C_0_BASE, -55, 1); // stop bit with set to 1
     /* --- */
 
 	while(1);

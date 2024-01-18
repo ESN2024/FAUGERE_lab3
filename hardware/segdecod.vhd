@@ -22,13 +22,13 @@ BEGIN
 			WHEN "0111"=> Sortie<="1111000";
 			WHEN "1000"=> Sortie<="0000000";
 			WHEN "1001"=> Sortie<="0010000";
-			WHEN "1010"=> Sortie<="0001000";
-			WHEN "1011"=> Sortie<="0000011";
-			WHEN "1100"=> Sortie<="1000110";
-			WHEN "1101"=> Sortie<="0100001";
-			WHEN "1110"=> Sortie<="0000110";
-			WHEN "1111"=> Sortie<="0001110";
-			WHEN OTHERS=> Sortie<="0111111";
+			WHEN "1010"=> Sortie<="0111111"; -- SIGNE MOINS
+			WHEN "1011"=> Sortie<="1111111"; -- ETEINT
+			WHEN "1100"=> Sortie<="0000000"; -- TOUT ALLUME
+			WHEN "1101"=> Sortie<="1111111";
+			WHEN "1110"=> Sortie<="1111111";
+			WHEN "1111"=> Sortie<="1111111";
+			WHEN OTHERS=> Sortie<="1111111";
 			END CASE;
 	END PROCESS;
 END RTL;
