@@ -36,6 +36,9 @@ module lab3_qsys_onchip_memory (
                                )
 ;
 
+  parameter INIT_FILE = "C:/Users/User/Documents/Conception conjointe/FAUGERE_lab3/software/app/mem_init/lab3_qsys_onchip_memory.hex";
+
+
   output  [ 31: 0] readdata;
   input   [ 13: 0] address;
   input   [  3: 0] byteenable;
@@ -66,10 +69,10 @@ wire             wren;
     );
 
   defparam the_altsyncram.byte_size = 8,
-           the_altsyncram.init_file = "UNUSED",
+           the_altsyncram.init_file = INIT_FILE,
            the_altsyncram.lpm_type = "altsyncram",
-           the_altsyncram.maximum_depth = 10000,
-           the_altsyncram.numwords_a = 10000,
+           the_altsyncram.maximum_depth = 15000,
+           the_altsyncram.numwords_a = 15000,
            the_altsyncram.operation_mode = "SINGLE_PORT",
            the_altsyncram.outdata_reg_a = "UNREGISTERED",
            the_altsyncram.ram_block_type = "AUTO",

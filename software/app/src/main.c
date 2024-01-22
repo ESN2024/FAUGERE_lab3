@@ -13,19 +13,10 @@
 
 alt_u8 currentDataAddr = DATAX0;
 
-static void pushButton_IRQHandler(void* context, alt_u32 id)    {
-    // set data type (acc axe x, y, z then x, ...)
-    if(currentDataAddr == DATAZ0)   currentDataAddr = DATAX0;
-    else currentDataAddr += 0x2;
-
-    // clear interrupt register
-    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIOPUSHBUTTON_BASE, 1);
-}
-
-static void timer_IRQHandler (void * context, alt_u32 id)	{
+alt_32 readAccData(alt_u8 dataAddr)   {
     // send addr register we want to read
     I2C_start(OPENCORES_I2C_0_BASE, DEVICE_I2C_ADDR, 0);
-    I2C_write(OPENCORES_I2C_0_BASE, currentDataAddr, 0);
+    I2C_write(OPENCORES_I2C_0_BASE, dataAddr, 0);
 
     // read corresponding data
     I2C_start(OPENCORES_I2C_0_BASE, DEVICE_I2C_ADDR, 1);
@@ -33,14 +24,38 @@ static void timer_IRQHandler (void * context, alt_u32 id)	{
     alt_u32 MSB_value = I2C_read(OPENCORES_I2C_0_BASE, 1);
     
     // arrange data representation
-    alt_u32 value = (MSB_value<<8) | (LSB_value);
-    alt_u8 sign = (value>>9)&1;
-    alt_32 s32_value = (sign == 0) ? value : 0xFFFFC000 | value; // signed value on 32 bits (no more on 10 bits)
-    alt_32 value_mg = s32_value * 2000/(alt_32)((1<<9) - 1);
-    alt_u32 value_mg_abs = (sign == 0) ? value_mg : -value_mg;
+    alt_16 s16_value = (MSB_value<<8) | (LSB_value);
+    alt_16 value_mg = s16_value * 4;
+    return value_mg;
+}
+
+void calibrate() {
+    // start of calibration (on OFSX_REG addr, then following addr are OFSY_REG and OFSZ_REG)
+    I2C_start(OPENCORES_I2C_0_BASE, DEVICE_I2C_ADDR, 0);
+    I2C_write(OPENCORES_I2C_0_BASE, OFSX_REG, 0);
+    // x calibration
+    I2C_write(OPENCORES_I2C_0_BASE, -2, 0);
+    // y calibration
+    I2C_write(OPENCORES_I2C_0_BASE, +4, 0);
+    // z calibration
+    I2C_write(OPENCORES_I2C_0_BASE, -55, 1); // stop bit with set to 1
+}
+
+static void pushButton_IRQHandler(void* context, alt_u32 id)    {
+    // set data type (acc axe x, y, z then x, ...) to show
+    if(currentDataAddr == DATAZ0)   currentDataAddr = DATAX0;
+    else currentDataAddr += 0x2;
+
+    // clear interrupt register
+    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIOPUSHBUTTON_BASE, 0b1);
+}
+
+static void timer_IRQHandler (void * context, alt_u32 id)	{
+    alt_16 value_mg = readAccData(currentDataAddr);
+    alt_u16 value_mg_abs = (value_mg > 0) ? value_mg : -value_mg;
 
     // sign display
-    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT4_BASE, (sign == 1) ? MINUS_7SEG : NONE_7SEG);
+    IOWR_ALTERA_AVALON_PIO_DATA(DIGIT4_BASE, (value_mg < 0) ? MINUS_7SEG : NONE_7SEG);
     IOWR_ALTERA_AVALON_PIO_DATA(DIGIT5_BASE, NONE_7SEG);
 
     // 4 digits (display absolute value in mg)
@@ -65,7 +80,7 @@ int main()	{
 	alt_irq_init(NULL);
 
     /* --- push button interrupt init --- */
-    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PIOPUSHBUTTON_BASE, 0x1);
+    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PIOPUSHBUTTON_BASE, 0b1);
 
     alt_irq_register(PIOPUSHBUTTON_IRQ, NULL, pushButton_IRQHandler);
     alt_irq_enable(PIOPUSHBUTTON_IRQ);
@@ -93,17 +108,9 @@ int main()	{
     // set data format
     I2C_start(OPENCORES_I2C_0_BASE, DEVICE_I2C_ADDR, 0);
     I2C_write(OPENCORES_I2C_0_BASE, DATA_FORMAT_REG, 0);
-    I2C_write(OPENCORES_I2C_0_BASE, 0b00000000, 1); // deassert FULL_RES data format (-> 10 bits two-complement signed) - right-justified mode - +/- 2g range
+    I2C_write(OPENCORES_I2C_0_BASE, 0b00001000, 1); // FULL_RES data format - right-justified mode with sign extended - +/- 2g range
 
-    // start of calibration (on OFSX_REG addr, then following addr are OFSY_REG and OFSZ_REG)
-    I2C_start(OPENCORES_I2C_0_BASE, DEVICE_I2C_ADDR, 0);
-    I2C_write(OPENCORES_I2C_0_BASE, OFSX_REG, 0);
-    // x calibration
-    I2C_write(OPENCORES_I2C_0_BASE, -2, 0);
-    // y calibration
-    I2C_write(OPENCORES_I2C_0_BASE, +3, 0);
-    // z calibration
-    I2C_write(OPENCORES_I2C_0_BASE, -55, 1); // stop bit with set to 1
+    calibrate();
     /* --- */
 
 	while(1);

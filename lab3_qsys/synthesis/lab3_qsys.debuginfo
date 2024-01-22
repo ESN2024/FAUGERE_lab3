@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="lab3_qsys" kind="system" version="18.0" fabric="QSYS">
  <!-- Format version 18.0 614 (Future versions may contain additional information.) -->
- <!-- 2024.01.17.10:53:32 -->
+ <!-- 2024.01.22.11:12:23 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1705485131</value>
+  <value>1705918254</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -7527,7 +7527,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x10000' end='0x19C40' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x10000' end='0x1EA60' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -7547,7 +7547,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x10000' end='0x19C40' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='opencores_i2c_0.avalon_slave_0' start='0x21000' end='0x21020' type='opencores_i2c.avalon_slave_0' /><slave name='digit5.s1' start='0x21020' end='0x21040' type='altera_avalon_pio.s1' /><slave name='digit4.s1' start='0x21040' end='0x21060' type='altera_avalon_pio.s1' /><slave name='digit3.s1' start='0x21060' end='0x21080' type='altera_avalon_pio.s1' /><slave name='digit2.s1' start='0x21080' end='0x210A0' type='altera_avalon_pio.s1' /><slave name='digit1.s1' start='0x210A0' end='0x210C0' type='altera_avalon_pio.s1' /><slave name='timer.s1' start='0x210C0' end='0x210E0' type='altera_avalon_timer.s1' /><slave name='digit0.s1' start='0x210E0' end='0x21100' type='altera_avalon_pio.s1' /><slave name='pioPushButton.s1' start='0x21100' end='0x21110' type='altera_avalon_pio.s1' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x21110' end='0x21118' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory.s1' start='0x10000' end='0x1EA60' type='altera_avalon_onchip_memory2.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x20800' end='0x21000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='opencores_i2c_0.avalon_slave_0' start='0x21000' end='0x21020' type='opencores_i2c.avalon_slave_0' /><slave name='digit5.s1' start='0x21020' end='0x21040' type='altera_avalon_pio.s1' /><slave name='digit4.s1' start='0x21040' end='0x21060' type='altera_avalon_pio.s1' /><slave name='digit3.s1' start='0x21060' end='0x21080' type='altera_avalon_pio.s1' /><slave name='digit2.s1' start='0x21080' end='0x210A0' type='altera_avalon_pio.s1' /><slave name='digit1.s1' start='0x210A0' end='0x210C0' type='altera_avalon_pio.s1' /><slave name='timer.s1' start='0x210C0' end='0x210E0' type='altera_avalon_timer.s1' /><slave name='digit0.s1' start='0x210E0' end='0x21100' type='altera_avalon_pio.s1' /><slave name='pioPushButton.s1' start='0x21100' end='0x21110' type='altera_avalon_pio.s1' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x21110' end='0x21118' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9151,7 +9151,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INIT_MEM_CONTENT</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INSTANCE_ID</name>
@@ -9159,7 +9159,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.NON_DEFAULT_INIT_FILE_ENABLED</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.RAM_BLOCK_TYPE</name>
@@ -9179,7 +9179,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SIZE_VALUE</name>
-   <value>40000</value>
+   <value>60000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.WRITABLE</name>
@@ -9279,7 +9279,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="initMemContent">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9287,9 +9287,9 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="initializationFileName">
    <type>java.lang.String</type>
-   <value>C:/Users/User/Documents/Conception conjointe/FAUGERE_Lab1/software/app/mem_init/lab1_qsys_onchip_memory.hex</value>
+   <value>C:/Users/User/Documents/Conception conjointe/FAUGERE_lab3/software/app/mem_init/lab3_qsys_onchip_memory.hex</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -9297,7 +9297,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -9311,7 +9311,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="memorySize">
    <type>long</type>
-   <value>40000</value>
+   <value>60000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -9375,9 +9375,9 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="useNonDefaultInitFile">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -9385,7 +9385,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>false</visible>
    <valid>true</valid>
   </parameter>
@@ -9498,7 +9498,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_init_file_name">
    <type>java.lang.String</type>
-   <value>lab3_qsys_onchip_memory.hex</value>
+   <value>C:/Users/User/Documents/Conception conjointe/FAUGERE_lab3/software/app/mem_init/lab3_qsys_onchip_memory.hex</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -9595,7 +9595,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>40000</value>
+    <value>60000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -9683,7 +9683,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="explicitAddressSpan">
     <type>java.math.BigInteger</type>
-    <value>40000</value>
+    <value>60000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -16071,7 +16071,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>onchip_memory.s1</name>
     <baseAddress>0</baseAddress>
-    <span>40000</span>
+    <span>60000</span>
    </memoryBlock>
   </interface>
   <interface
@@ -20385,5 +20385,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.0</version>
  </plugin>
  <reportVersion>18.0 614</reportVersion>
- <uniqueIdentifier>12A5896FCE5B0000018D16D6157E</uniqueIdentifier>
+ <uniqueIdentifier>12A5896FCE5B0000018D30A6F8DA</uniqueIdentifier>
 </EnsembleReport>

@@ -31,7 +31,7 @@ signal digit_value : digits_type;
 component lab3_qsys is
   port (
 		clk_clk                                  : in  std_logic                    := 'X'; -- clk
-		piopushbutton_external_connection_export : in  std_logic                    := 'X'; -- export
+		piopushbutton_external_connection_export : in    std_logic                  := 'X'; -- export
 		reset_reset_n                            : in  std_logic                    := 'X'; -- reset_n
 		
 		digit0_external_connection_export        : out std_logic_vector(3 downto 0);        -- export
@@ -91,7 +91,7 @@ digit4(7) <= '1';
 digit5(7) <= '1';
 
 -- config accelero
-GSENSOR_SDO <= '1'; -- for 0x1D
+GSENSOR_SDO <= '1'; -- for 0x1D i2c addr
 GSENSOR_CS_n <= '1'; -- I2C mode
 
 
